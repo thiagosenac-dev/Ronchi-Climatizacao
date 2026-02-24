@@ -1,0 +1,355 @@
+/* ============================================================
+   VARIÁVEIS E RESET
+   ============================================================ */
+:root {
+    --primary: #0056b3;
+    --secondary: #00d4ff;
+    --dark: #1a2a3a;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --whatsapp: #25d366;
+    --text-gray: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   DESKTOP (PADRÃO)
+   ============================================================ */
+
+/* Header & Nav */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0, 32, 63, 0.7), rgba(0, 32, 63, 0.7)), 
+                url('https://images.unsplash.com/photo-1599933334297-516d3f828130?auto=format&fit=crop&q=80&w=1470');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 5%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    background: var(--whatsapp);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Seções Gerais */
+.container {
+    padding: 100px 8%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--secondary);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Grid de Serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--light-bg);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+.service-card:hover {
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+}
+
+/* Catálogo */
+.catalog {
+    background: #f1f5f9;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-image {
+    background: #e2e8f0;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: #94a3b8;
+}
+
+.product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.price {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-buy:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 8% 30px;
+    text-align: center;
+}
+
+.social-links {
+    margin: 25px 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}
+
+/* ============================================================
+   QUERY PARA CELULAR (Telas até 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    
+    /* Ajuste do Header */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* Logo em cima, menu embaixo */
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li {
+        margin-left: 0; /* Remove o recuo lateral no mobile */
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        height: 80vh; /* Um pouco menor no celular */
+        padding-top: 100px; /* Compensa o header fixo */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Fonte menor para não quebrar feio */
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .btn-whatsapp {
+        width: 100%; /* Botão largo no celular é mais fácil de clicar */
+        justify-content: center;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    /* Seções e Grids Mobile */
+    .container {
+        padding: 60px 5%; /* Menos respiro lateral */
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Um card embaixo do outro */
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 35px 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Produtos em coluna única para foco total */
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    /* Footer Mobile */
+    footer {
+        padding: 40px 5% 20px;
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
+}
